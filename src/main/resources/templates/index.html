@@ -1,0 +1,25 @@
+<div th:switch="${students}">
+    <h2 th:case="null">No students yet!</h2>
+    <div th:case="*">
+        <h2>Students</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Full name</th>
+                <th>Bithday</th>
+                <th>Group</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="student : ${students}">
+                <td th:text="${student.name + ' ' +  student.surname + ' ' + student.patronymic}"></td>
+                <td th:text="${student.birthday}"></td>
+                <td th:text="${student.squad}"></td>
+                <td><a th:href="@{/delete/{id}(id=${student.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/signup">Add a new student</a></p>
+</div>

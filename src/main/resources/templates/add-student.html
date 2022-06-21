@@ -1,0 +1,18 @@
+<form action="#" th:action="@{/addstudent}" th:object="${student}" method="post">
+  <label for="name">Name</label>
+  <input type="text" th:field="*{name}" id="name" placeholder="Name">
+  <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+  <label for="name">Surname</label>
+  <input type="text" th:field="*{surname}" id="surname" placeholder="Surname">
+  <span th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"></span>
+  <label for="name">Surname</label>
+  <input type="text" th:field="*{patronymic}" id="patronymic" placeholder="Patronymic">
+  <span th:if="${#fields.hasErrors('patronymic')}" th:errors="*{patronymic}"></span>
+  <label for="name">Birthday</label>
+  <input type="date" th:field="*{birthday}" id="birthday" placeholder="Birthday">
+  <span th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}"></span>
+  <label for="name">Squad</label>
+  <input type="text" th:field="*{squad}" id="squad" placeholder="Squad">
+  <span th:if="${#fields.hasErrors('squad')}" th:errors="*{squad}"></span>
+  <input type="submit" value="Add Student">
+</form>
